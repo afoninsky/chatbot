@@ -18,6 +18,12 @@ bot.on('message', msg => {
   console.log(msg)
 })
 
+router.get('/health', async ctx => {
+  // await bot.getMe()
+  // TODO: real health check
+  ctx.body = { success: true }
+})
+
 router.post('/keel/deployment', async ctx => {
   console.log('>>>', ctx.url)
   console.log(ctx.request.body)

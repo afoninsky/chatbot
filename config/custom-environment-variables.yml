@@ -1,5 +1,5 @@
 http:
   port: HTTP_PORT
 telegram:
-  token: TELEGRAM_TOKEN
-  defaultChannel: TELEGRAM_DEFAULT_CHANNEL
+  token: TOKEN
+  defaultChannel: DEFAULT_CHANNEL

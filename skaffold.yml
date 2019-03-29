@@ -1,10 +1,21 @@
-apiVersion: skaffold/v1beta4
+apiVersion: skaffold/v1beta7
 kind: Config
 build:
   artifacts:
-  - image: ???
+  - image: vkfont/chatbot
   tagPolicy:
     envTemplate:
       template: '{{.IMAGE_NAME}}:{{.TAG}}'
 deploy:
-  kubectl: {}
+  helm:
+    releases:
+    - name: chatbot
+      chartPath: makeomatic/bishop
+      valuesFiles:
+      - chart.yml
+      namespace: default
+      setValueTemplates:
+        image.tag: '{{.TAG}}'
+      wait: true
+      recreatePods: true
+      skipBuildDependencies: true

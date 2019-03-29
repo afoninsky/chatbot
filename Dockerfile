@@ -6,5 +6,4 @@ COPY package.json $NODE_DIR
 RUN yarn install --production
 COPY . $NODE_DIR
 
-EXPOSE 8080
-CMD ["yarn", "start"]
+CMD ["node", "src/server.js"]
