@@ -1,0 +1,5 @@
+http:
+  port: 8080
+telegram:
+  token: 754996663:AAFm3miB8L1DODB_tGiI_xfSO5anwRO3Uq0
+  defaultChannel: "498146361"
